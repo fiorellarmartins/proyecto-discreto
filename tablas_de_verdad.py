@@ -24,5 +24,6 @@ def tabla_de_verdad(array, num_var):
 x = tabla_de_verdad(array, num_var)
 # print(x)
 columnas = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K"]
+
 df = pd.DataFrame(x, columns=columnas)
 print(df)
