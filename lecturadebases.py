@@ -14,7 +14,7 @@ def binoomo(df):
 df = pd.read_csv("test.csv")
 print(df)
 mat=binoomo(df)
-print(mat)
+print(mat.astype(int))
 
 
 
