@@ -30,19 +30,26 @@ def sorteo(matriz,betas):
         sumatoria=0.73646
         for j in range(len(matriz[i])):
             sumatoria+=matriz[i][j]*betas[j]
-        if sumatoria > 1:
+        if sumatoria > 0.5:
             importantes.append(i)
     return importantes
 
 
-x = tabla_de_verdad(array, 7)
-columnas = ["A", "B", "C", "D", "E", "F", "G"]
-betas= [-0.09194,0.20075,-0.22522,0.32197,-0.11367,0.13933,-0.21328]
+x = tabla_de_verdad(array, 13)
+columnas = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13"]
+brasil= []
+corea= []
+japon= []
+usa=[]
+brasilcum=sorteo(x,brasil)
+coreacum=sorteo(x,corea)
+japoncum=sorteo(x,japon)
+usacum=sorteo(x,usa)
 
-first_try=sorteo(x,betas)
-'''for i in range(len(first_try)):
-    print(i, first_try[i])'''
-print(first_try)
-#df = pd.DataFrame(x, columns=columnas)
+print('Brasil: ', brasilcum)
+print('Corea: ', coreacum)
+print('Japon: ', japoncum)
+print('USA: ', usacum)
+
 
 
