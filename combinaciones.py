@@ -52,4 +52,9 @@ print('Japon: ', japoncum)
 print('USA: ', usacum)
 
 
+'''for i in range(len(first_try)):
+    print(i, first_try[i])'''
+
+#df = pd.DataFrame(x, columns=columnas)
+
 
