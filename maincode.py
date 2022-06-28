@@ -4,10 +4,11 @@ import pandas as pd
 import numpy as np
 from Implicantes_esenciales import *
 class base:
-    def __init__(self,base,pais):
+    def __init__(self,base,pais,comparison):
         self.pais=pais
         self.base=base
         self.estandarizado=self.binoomo(base)
+        self.filaspositivas=self.check(comparison)
 
     def binoomo(self,df):
         binomo=np.zeros(shape=(len(df),len(df.columns)))
@@ -19,6 +20,25 @@ class base:
                     binomo[i][j]=1
         return binomo
 
+    def check(self,base):
+        matrx_xcom=self.estandarizado
+        control,valoresconfirmados=[],[]
+        for i in range(len(base)):
+            c=list(base[i])
+            control.append(c)
+        for proposicion in range(len(matrx_xcom)):
+            for implicante in range(len(control)):
+                puntuacion=0
+                for variable in range(len(matrx_xcom[proposicion])):
+                    if str(control[implicante][variable])=='-':
+                        puntuacion+=1
+                    elif matrx_xcom[proposicion][variable]==int(control[implicante][variable]):puntuacion+=1
+                    else:continue
+                if puntuacion==13:
+                    valoresconfirmados.append(proposicion)
+                    break
+        return valoresconfirmados
+
     def __str__(self):
         return 'Soy '+self.pais
 
@@ -28,12 +48,9 @@ ar=open(dat,'rb')
 L=pickle.load(ar)
 ar.close()
 
-#def comparar(estandarizado,esenciales):
-###estoy trabajando con BRasil atm
-matrx_xcom=L[2].estandarizado
-control=Brasil
-for i in range(len(Brasil)):
-    pass
+for i in range(len(L)):
+    print(L[i])
+    print(L[i].filaspositivas)
 
 
 ###GUARDAR LA ESTANDARIZACION EN CSV
@@ -70,13 +87,13 @@ dfkr = pd.read_csv(csvkorea,header=None)
 dfbra = pd.read_csv(csvbrasil,header=None)
 dfjap = pd.read_csv(csvjapon,header=None)
 
-USA=base(dfus,"USA")
-KOREA=base(dfkr,'KOREA')
-BRA=base(dfbra,'BRASIL')
-JAP=base(dfjap,'JAPAN')'''
+USA=base(dfus,"USA",USA)
+KOREA=base(dfkr,'KOREA',Corea)
+BRA=base(dfbra,'BRASIL',Brasil)
+JAP=base(dfjap,'JAPAN',Japon)
 
 #SUBIR CAMBIOS
-'''L=[USA,KOREA,BRA,JAP]
+L=[USA,KOREA,BRA,JAP]
 ar=open(dat,'wb')
 pickle.dump(L,ar)
 ar.close()'''
