@@ -1,4 +1,5 @@
 import valores
+from numpy import sort
 
 
 def mul(x, y):  # Multiply 2 minterms
@@ -95,15 +96,15 @@ def removeTerms(_chart, terms):  # Removes minterms which are already covered fr
                 pass
 
 
-Brasil = valores.Brasil()
-# Corea = valores.Corea()
+# Brasil = valores.Brasil()
+#Corea = valores.Corea()
 #Japon = valores.Japon()
-#USA = valores.USA()
+USA = valores.USA()
 dntcrs = []
 # mt = [int(i) for i in input("Ingrese los Minterminos: ").strip().split()]
 # dc = [int(i) for i in input(
 #     "Ingrese los 'don't cares' (si los hay): ").strip().split()]
-mt = [int(i) for i in Brasil]
+mt = [int(i) for i in USA]
 dc = [int(i) for i in dntcrs]
 mt.sort()
 minterms = mt + dc
@@ -193,8 +194,9 @@ for i in all_pi:
 # Printing and processing of Prime Implicant chart ends
 
 EPI = findEPI(chart)  # Finding essential prime implicants
-print(EPI.sort())
-print("\nPrimos Implicantes Escenciales: "+', '.join(str(i) for i in EPI))
+EPI.sort()
+print(EPI)
+print("\nPrimos Implicantes Esenciales: "+', '.join(str(i) for i in EPI))
 removeTerms(chart, EPI)  # Remove EPI related columns from chart
 if(len(chart) == 0):  # If no minterms remain after removing EPI related columns
     final_result = [findVariables(i)
