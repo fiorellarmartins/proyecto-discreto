@@ -5,7 +5,7 @@ import numpy as np
 from Implicantes_esenciales import *
 class base:
     def __init__(self,base,pais,comparison):
-        self.pais=pais
+        self.pnombre_pais=pais
         self.base=base
         self.estandarizado=self.binoomo(base)
         self.filaspositivas=self.check(comparison)
@@ -40,7 +40,7 @@ class base:
         return valoresconfirmados
 
     def __str__(self):
-        return 'Soy '+self.pais
+        return 'Soy '+self.nombre_pais
 
 ###Las bases
 dat=os.path.dirname(os.path.realpath(__file__))+'\df\lasbases'
