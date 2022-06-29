@@ -18,13 +18,6 @@ def tabla_de_verdad(array, num_var):
     array = array.astype(int)
     return(array)
 
-def menor(lista):
-    min = lista[0];
-    for x in lista:
-        if x < min:
-            min = x
-    return min
-
 def sorteo(matriz,betas,int):
     importantes=[]
     for i in range (len(matriz)):

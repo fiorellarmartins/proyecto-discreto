@@ -1,9 +1,4 @@
-import os
-
-csvkorea=os.path.dirname(os.path.realpath(__file__))+'\db\korea.csv'
-csvbrasil=os.path.dirname(os.path.realpath(__file__))+'\db\sbrasil.csv'
-csvjapon=os.path.dirname(os.path.realpath(__file__))+'\db\japon.csv'
-csvus=os.path.dirname(os.path.realpath(__file__))+'\db\estdosunidos.csv'
+from numpy import sort
 
 # Brasil: 389 elementos de 3714
 # Tiempo de ejecución: 18.17 minutos
