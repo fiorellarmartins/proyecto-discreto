@@ -18,3 +18,11 @@ combinaciones.py usa estos coeficientes en una tabla de verdad de 13 variables p
 Estos terminos minimos implicantes son rescatados por maincode.py, el cual contiene una clase donde usa de esta informacion, junto a los datos de cada país para hallar cuales son las iteraciones donde se debe comprar.
 
 Los datos de cada pais se encuentran en csvs dentro de la carpeta /df, junto con los archivos binarios de los objetos de cada país. Si se desease evaluar las iteraciones de otro archivo, solo haria falta reemplazar el archivo del país dentro de /df con el que deseases evaluar. 
+
+################################  INSTRUCCIONES  ################################
+
+1. Dirigirse a la carpeta \###CSV ACA###
+2. Modificar el CSV del país del que se introducirá la información. Estas son 13 variables con el formato (var1,var2,var3,var4,var5,var6,var7,var8,var9,var10,var11,var12,var13)
+3. Ejecutar el maincode y escoger la opcion del país que se desea consultar
+
+#################################################################################
