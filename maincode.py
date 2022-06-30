@@ -5,7 +5,7 @@ import numpy as np
 from Implicantes_esenciales import *
 class base:
     def __init__(self,base,pais,comparison):
-        self.pnombre_pais=pais
+        self.nombre_pais=pais
         self.base=base
         self.estandarizado=self.binoomo(base)
         self.filaspositivas=self.check(comparison)
