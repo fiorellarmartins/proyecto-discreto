@@ -156,8 +156,8 @@ prueba[0][7]='Brasil code'
 prueba[0][8]='Brasil bench'
 
 bench=[]
-ass=os.path.dirname(os.path.realpath(__file__))+'\df\sbench.csv'
-benchread = open(ass,"r")
+noice=os.path.dirname(os.path.realpath(__file__))+'\df\sbench.csv'
+benchread = open(noice,"r")
 for linea in benchread:
     bench.append(linea.split(","))
 benchread.close()
@@ -187,8 +187,8 @@ for i in range(1,len(prueba)):
         elif j==0:
             prueba[i][j]=bench[i][0]
 
-ass=os.path.dirname(os.path.realpath(__file__))+'\df\cresultados.csv'
-ar=open(ass,"w")
+noice=os.path.dirname(os.path.realpath(__file__))+'\df\cresultados.csv'
+ar=open(noice,"w")
 for i in range(143):
     ar.write('{0},{1},{2},{3},{4},{5},{6},{7},{8},\n'.format(prueba[i][0],prueba[i][1],prueba[i][2],prueba[i][3],prueba[i][4],prueba[i][5],prueba[i][6],prueba[i][7],prueba[i][8]))
 ar.close()'''
